@@ -1,0 +1,12 @@
+<h1>Photo Gallery</h1>
+
+<div class="photo">
+  <%=  @photo.name %><br/>
+  <% @attachments.each do |photo| %>
+  	<%= image_tag photo.file_url(:thumb) %><br/>
+<% end %>
+</div>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to "Destroy", @photo, method: :delete %> |
+<%= link_to 'Back', photos_path %>
